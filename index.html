@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Saya</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow: hidden;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png'), 
+                        url('https://www.transparenttextures.com/patterns/love.png');
+            background-size: 200% 200%;
+            transition: background-position 0.1s ease;
+        }
+        .content {
+            text-align: center;
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        img {
+            width: 200px;
+            border-radius: 100px;
+        }
+        h1 {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music">
+        <source src="https://l.top4top.io/m_320047z6p0.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="content">
+        <img src="https://envs.sh/BPZ.jpg" alt="Foto Saya">
+        <h1>Utin</h1>
+        <p>Saya pengangguran kelas kakap.</p>
+        <p>Email: utinbae1@example.com</p>
+        <p>Nomor HP: 083125234003</p>
+        <button onclick="playMusic()">Play</button>
+        <button onclick="stopMusic()">Stop</button>
+    </div>
+
+    <script>
+        let x = 0, y = 0;
+        const music = document.getElementById('background-music');
+
+        function playMusic() {
+            music.play();
+        }
+
+        function stopMusic() {
+            music.pause();
+            music.currentTime = 0; // Mengatur ulang waktu ke awal
+        }
+
+        window.addEventListener('deviceorientation', (event) => {
+            x = event.gamma; // Arah horizontal
+            y = event.beta; // Arah vertikal
+            
+            // Mengatur posisi latar belakang berdasarkan gerakan
+            document.body.style.backgroundPosition = `${x * 1.5}px ${y * 1.5}px`;
+        });
+    </script>
+</body>
+</html>
