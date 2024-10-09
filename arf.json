@@ -7,13 +7,13 @@
     "type": "folder",
     "children": [
     {
-      "name": "Nama",
+      "name": "Nama\ng",
       "type": "folder",
       "children": [
       {
         "name": "Utin",
         "type": "text",
-        "content": "Utin"
+        "url": "https://whatsmyname.app/"
       }]
     },
     {
