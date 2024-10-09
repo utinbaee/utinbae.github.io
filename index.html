@@ -1,95 +1,39 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang Saya</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-family: Arial, sans-serif;
-            color: white;
-            overflow: hidden;
-            background: url('https://www.transparenttextures.com/patterns/stardust.png'), 
-                        url('https://www.transparenttextures.com/patterns/love.png');
-            background-size: 200% 200%;
-            transition: background-position 0.1s ease;
-        }
-        .content {
-            text-align: center;
-            backdrop-filter: blur(5px);
-            padding: 20px;
-            border-radius: 15px;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        img {
-            width: 200px;
-            border-radius: 100px;
-        }
-        h1 {
-            font-size: 2em;
-            margin: 10px 0;
-        }
-        p {
-            font-size: 1.2em;
-            margin: 5px 0;
-        }
-        button {
-            padding: 10px 20px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
-    <audio id="background-music">
-        <source src="https://l.top4top.io/m_320047z6p0.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="arf.css"/>
+    <script type="text/javascript" src="d3.v3.min.js"></script>
+    <title>OSINT Framework</title>
+  </head>
 
-    <div class="content">
-        <img src="https://envs.sh/BPZ.jpg" alt="Foto Saya">
-        <h1>Utin</h1>
-        <p>Saya pengangguran kelas kakap.</p>
-        <p>Email: utinbae1@example.com</p>
-        <p>Nomor HP: 083125234003</p>
-        <button onclick="playMusic()">Play</button>
-        <button onclick="stopMusic()">Stop</button>
+  <body>
+    <div id="body">
+      <div id="header">
+        OSINT Framework
+          <hr/>
+      </div>
     </div>
 
-    <script>
-        let x = 0, y = 0;
-        const music = document.getElementById('background-music');
+    <script src="aarf.js"></script>
 
-        function playMusic() {
-            music.play();
-        }
+    <div class="legend"><p>(T) - Indicates a link to a tool that must be installed and run locally<br>
+    (D) - Google Dork, for more information: <a href="https://en.wikipedia.org/wiki/Google_hacking">Google Hacking</a><br>
+    (R) - Requires registration<br>
+    (M) - Indicates a URL that contains the search term and the URL itself must be edited manually<br></p></div>
 
-        function stopMusic() {
-            music.pause();
-            music.currentTime = 0; // Mengatur ulang waktu ke awal
-        }
+    <h3>Notes</h3>
+    OSINT framework focused on gathering information from free tools or resources.  The intention is to help people find free OSINT resources.  Some of the sites included might require registration or offer more data for $$$, but you should be able to get at least a portion of the available information for no cost.<br>
 
-        window.addEventListener('deviceorientation', (event) => {
-            x = event.gamma; // Arah horizontal
-            y = event.beta; // Arah vertikal
-            
-            // Mengatur posisi latar belakang berdasarkan gerakan
-            document.body.style.backgroundPosition = `${x * 1.5}px ${y * 1.5}px`;
-        });
-    </script>
-</body>
+    <p>I originally created this framework with an information security point of view.  Since then, the response from other fields and disciplines has been incredible.  I would love to be able to include any other OSINT resources, especially from fields outside of infosec.  Please let me know about anything that might be missing!</p>
+
+    <h3>For Update Notifications</h3>
+    Follow me on Twitter: <a href="https://twitter.com/jnordine">@jnordine</a><br>
+    Watch or star the project on Github: <a href="https://github.com/lockfale/osint-framework">https://github.com/lockfale/osint-framework</a>
+
+    <h3>Suggestions, Comments, Feedback</h3>
+    Feedback or new tool suggestions are extremely welcome!  Please feel free to reach out on Twitter or submit an issue on Github.
+
+  </body>
+
 </html>
